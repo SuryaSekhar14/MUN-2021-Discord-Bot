@@ -4,10 +4,12 @@ from discord.member import VoiceState
 import xlrd
 from xlwt import Workbook
 from discord.ext import commands
+import csv #csv module imported
 
-TOKEN=''
-CHANNEL_ID=int(819079476000325674)
-VOICE_ID=int(843865682760302602)
+TOKEN='' 
+#token change required
+CHANNEL_ID=int(829356662665642067) #channel_id change required
+VOICE_ID=int(829356662665642068) #voice_id change required
 client = commands.Bot(command_prefix = '')
 
 @client.event
@@ -32,13 +34,20 @@ async def noice(ctx):
 	print(ctx.author.id)
 	print(ctx.voice_client)
 
-'''
+
 @client.command()    
 async def Attendence(ctx, name, year, stream):
 	#sheet1.write(name, year, stream)
 	#wb.save('data.xlsx')
+
+	#New Code From Here
+	print(name,year,stream)
+	with open('attendees.csv','a',newline='') as file:
+		fieldnames=["Name","Stream","Year"]
+		writer=csv.DictWriter(file,fieldnames=fieldnames)
+		writer.writerow({"Name":name,"Stream":stream,"Year":year})
 	await ctx.send(f'{name}, noted')
-'''
+
 
 @client.command(pass_context=True)    
 async def join(ctx):
