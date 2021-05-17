@@ -29,15 +29,33 @@ sheet1 = wb.add_sheet('Sheet 1')
 async def noice(ctx):
 	await ctx.send(f'Noice.\n{round(client.latency*1000)}ms')
 
+'''
 @client.command()    
 async def Attendence(ctx, name, year, stream):
 	#sheet1.write(name, year, stream)
 	#wb.save('data.xlsx')
 	await ctx.send(f'{name}, noted')
+'''
 
-@client.command()    
-async def VCheck(ctx):
-	
+@client.command(pass_context=True)    
+async def join(ctx):
+	#channel = ctx.message.author.voice.channel
+	#print(channel)
+	vcchannel=client.get_channel(VOICE_ID)
+	await vcchannel.connect()
+	await ctx.send("Joined!")
+	'''
+	if(ctx.voice_client):
+		channel = ctx.message.author.voice.channel
+		print(channel)
+	else:
+		await ctx.send("Voice channel e dhok bara")
+	'''
+
+@client.command(pass_context=True)    
+async def leave(ctx):
+	await ctx.guild.voice_client.disconnect()
+	await ctx.send("Left!")
 
 
 client.run(TOKEN)
