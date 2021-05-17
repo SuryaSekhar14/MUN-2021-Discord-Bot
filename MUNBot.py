@@ -5,7 +5,7 @@ import xlrd
 from xlwt import Workbook
 from discord.ext import commands
 
-TOKEN='ODQzNzg2MDYyMTQ0ODY0MjY2.YKI7Ag.2f-Hym6sqMvjMwJzERFb6CmVHP4'
+TOKEN=''
 CHANNEL_ID=int(819079476000325674)
 VOICE_ID=int(843865682760302602)
 client = commands.Bot(command_prefix = '')
