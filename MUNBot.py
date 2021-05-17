@@ -1,13 +1,13 @@
 import discord
 import time
-import random
+from discord.member import VoiceState
 import xlrd
 from xlwt import Workbook
 from discord.ext import commands
 
 TOKEN='ODQzNzg2MDYyMTQ0ODY0MjY2.YKI7Ag.2f-Hym6sqMvjMwJzERFb6CmVHP4'
 CHANNEL_ID=int(819079476000325674)
-VOICE_ID=int(691490232662622312)
+VOICE_ID=int(843865682760302602)
 client = commands.Bot(command_prefix = '')
 
 @client.event
@@ -25,9 +25,12 @@ sheet1 = wb.add_sheet('Sheet 1')
 '''
 
 #FUNCTIONS
-@client.command()             #Check Ping
+@client.command()            
 async def noice(ctx):
 	await ctx.send(f'Noice.\n{round(client.latency*1000)}ms')
+	print(ctx.author)
+	print(ctx.author.id)
+	print(ctx.voice_client)
 
 '''
 @client.command()    
@@ -39,18 +42,9 @@ async def Attendence(ctx, name, year, stream):
 
 @client.command(pass_context=True)    
 async def join(ctx):
-	#channel = ctx.message.author.voice.channel
-	#print(channel)
 	vcchannel=client.get_channel(VOICE_ID)
 	await vcchannel.connect()
 	await ctx.send("Joined!")
-	'''
-	if(ctx.voice_client):
-		channel = ctx.message.author.voice.channel
-		print(channel)
-	else:
-		await ctx.send("Voice channel e dhok bara")
-	'''
 
 @client.command(pass_context=True)    
 async def leave(ctx):
