@@ -2,34 +2,33 @@ import discord
 import time
 from discord.member import VoiceState
 import xlrd
-#import env
 from xlwt import Workbook
 from discord.ext import commands
 import csv
 
 
-TOKEN='ODQzODU1NjcxNDAwMjAyMjQw.YKJ71g.fSA2eVH2HnKm4MQEv_rflTejvT0'
-CHANNEL_ID=int(763390600103854114) #channel_id change required
-VOICE_ID=int(843865682760302602) #voice_id change required
+
+CHANNEL_ID=int(763390600103854114)
+VOICE_ID=int(843865682760302602)
 client = commands.Bot(command_prefix = '')
 
 @client.event
 async def on_ready():
 	print('Bot is Ready.')
+	channel = client.get_channel(CHANNEL_ID)
+	await channel.send("MUN Bot isLive")
+
 
 #FUNCTIONS
 @client.command()            
-async def noice(ctx):
-	await ctx.send(f'Noice.\n{round(client.latency*1000)}ms')
+async def ping(ctx):
+	await ctx.send(f'What do you expect, Pong?\nLatency= {round(client.latency*1000)}ms')
 	print(ctx.author)
 	print(ctx.author.id)
-	print(ctx.voice_client)
 
 
 @client.command()    
-async def Attendence(ctx,nys):
-	#sheet1.write(name, year, stream)
-	#wb.save('data.xlsx')
+async def Attendence(ctx, nys):
 
 	#New Code From Here
 	print(nys.split(','))
@@ -46,11 +45,6 @@ async def Attendence(ctx,nys):
 async def join(ctx):
 	vcchannel=client.get_channel(VOICE_ID)
 	await vcchannel.connect()
-	user = ctx.message.author
-	vc = user.voice.channel
-	print(vc)
-	if (vc == vcchannel):
-		await ctx.send(f'**{ctx.author}**, Attendance Recorded')
 	await ctx.send("Joined!")
 
 @client.command(pass_context=True)    
@@ -58,5 +52,15 @@ async def leave(ctx):
 	await ctx.guild.voice_client.disconnect()
 	await ctx.send("Left!")
 
+@client.command(pass_context=True)
+async def att(ctx):
+	vcchannel=client.get_channel(VOICE_ID)
+	try:
+		user = ctx.message.author
+		vc = user.voice.channel
+		if (vc == vcchannel):
+			await ctx.send(f'**{ctx.author}**, Attendance Recorded')
+	except:
+		await ctx.send(f'**{ctx.author}**, You must be in the Meeting')
 
 client.run(TOKEN)
