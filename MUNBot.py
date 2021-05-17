@@ -8,7 +8,7 @@ from discord.ext import commands
 import csv
 
 
-TOKEN='ODQzNzg2MDYyMTQ0ODY0MjY2.YKI7Ag.EA0pBFPgYyVlxBM0hwAuF1NTX4Q'
+TOKEN=''
 CHANNEL_ID=int(763390600103854114) #channel_id change required
 VOICE_ID=int(843865682760302602) #voice_id change required
 client = commands.Bot(command_prefix = '')
