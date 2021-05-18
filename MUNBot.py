@@ -5,7 +5,7 @@ from discord.ext import commands
 import csv
 
 
-TOKEN = 'ODQzODU1NjcxNDAwMjAyMjQw.YKJ71g._N6DP2oFpoq9WWsZqgug60ZSehY'
+TOKEN = 'ODQzODU1NjcxNDAwMjAyMjQw.YKJ71g.DGzv54_tP7lT8_QHQl0-FM--H64'
 CHANNEL_ID=int(829356662665642067)
 VOICE_ID=int(829356662665642068)
 client = commands.Bot(command_prefix = '')
