@@ -7,7 +7,7 @@
 <h3>-> Attendance Name Surname Stream Year</h3>
 <h3>-> Attendance Name MiddleName Surname Stream Year</h3>
 
-<h1>P.S - "Attendance" is the initialiser, please maintain the spelling and case.</h1>
+<h2>P.S - "Attendance" is the initialiser, please maintain the spelling and case.</h2>
 
 <h1>Samples -</h1>
 
