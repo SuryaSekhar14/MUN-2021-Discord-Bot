@@ -18,19 +18,18 @@ async def on_ready():
 
 
 #FUNCTIONS
-@client.command()            
+@client.command()            #Check bot's Latency
 async def ping(ctx):
 	await ctx.send(f'What do you expect, Pong?\nLatency= {round(client.latency*1000)}ms')
 	print(ctx.author)
 
-@client.command()    
+@client.command()            #Give Attendance
 async def Attendance(ctx, *nys):
 	inter=list(nys)
 	info=inter
 	n=len(info)
 	vcchannel=client.get_channel(VOICE_ID)
 	try:
-		#############
 		user = ctx.message.author
 		vc = user.voice.channel
 		if (vc == vcchannel):
@@ -45,20 +44,19 @@ async def Attendance(ctx, *nys):
 					writer.writerow({"Name":info[0]+' '+info[1]+' '+info[2],"Stream":info[3],"Year":info[4],"Team":info[5]})
 				if(n==7):
 					writer.writerow({"Name":info[0]+' '+info[1]+' '+info[2]+' '+info[3],"Stream":info[4],"Year":info[5],"Team":info[6]})
-			#############
 			await ctx.send(f'**{info[0]}**, Attendance Recorded')
 		else:
 			await ctx.send(f'**{info[0]}**, you are in another Voice Channel')
 	except:
 		await ctx.send(f'**{info[0]}**, You must be in a Voice Channel')
 
-@client.command(pass_context=True)    
+@client.command(pass_context=True)        #Join Voice Channel
 async def join(ctx):
 	vcchannel=client.get_channel(VOICE_ID)
 	await vcchannel.connect()
 	await ctx.send("Joined!")
 
-@client.command(pass_context=True)    
+@client.command(pass_context=True)        #leave Voice Channel
 async def leave(ctx):
 	try:
 		await ctx.guild.voice_client.disconnect()
@@ -67,7 +65,7 @@ async def leave(ctx):
 		await ctx.send("I am not in the Meeting.")
 
 # att() commented out, if required later shall be used.
-'''@client.command(pass_context=True)
+'''@client.command(pass_context=True)         #Is user present in the meeting?
 async def att(ctx):
 	vcchannel=client.get_channel(VOICE_ID)
 	try:
