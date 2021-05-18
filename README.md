@@ -4,8 +4,8 @@
 
 <h1> Text Attendance Formats - </h1>
 
-<h2>-> Attendance Name Surname Stream Year</h2>
-<h2>-> Attendance Name MiddleName Surname Stream Year</h2>
+<h3>-> Attendance Name Surname Stream Year</h3>
+<h3>-> Attendance Name MiddleName Surname Stream Year</h3>
 
 <h1>P.S - "Attendance" is the initialiser, please maintain the spelling and case.</h1>
 
