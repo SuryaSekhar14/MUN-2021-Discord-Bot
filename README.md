@@ -4,7 +4,7 @@
 
 ### Dependency Installation - 
 ```bash
-pip install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Attendance Formats
@@ -25,12 +25,12 @@ pip install requirements.txt
 ### Samples -
 
 ```bash
-Attendance Name Stream Year Team-Name
+Attendance First-Name Surname Stream Year Team-Name
 ```  
 <img src="assets\N.png">
 
 ```bash
-Attendance Name Surname Stream Year Team-Name
+Attendance First-Name Middle-Name Surname Stream Year Team-Name
 ```
 <img src="assets\NS.png">  
 
