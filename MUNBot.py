@@ -7,7 +7,7 @@ from discord.ext import commands
 import csv
 
 
-
+TOKEN = ''
 CHANNEL_ID=int(753472470354362476)
 VOICE_ID=int(753472470773923861)
 client = commands.Bot(command_prefix = '')
@@ -28,17 +28,20 @@ async def ping(ctx):
 
 
 @client.command()    
-async def Attendence(ctx, nys):
+async def Attendance(ctx, *nys):
 
 	#New Code From Here
-	print(nys.split(','))
-	info=nys.split(',')
-	
+	inter=list(nys)
+	info=inter
+	n=len(info)
 	with open('attendees.csv','a',newline='') as file:
 		fieldnames=["Name","Stream","Year"]
 		writer=csv.DictWriter(file,fieldnames=fieldnames)
-		writer.writerow({"Name":info[0],"Stream":info[1],"Year":info[2]}) 
-	await ctx.send(f'{nys}, noted')
+		if(n==4):
+			writer.writerow({"Name":info[0]+info[1],"Stream":info[2],"Year":info[3]}) 
+		if(n==5):
+			writer.writerow({"Name":info[0]+' '+info[1]+' '+info[2],"Stream":info[3],"Year":info[4]})
+	await ctx.send(f'{info[0]}, noted')
 
 
 @client.command(pass_context=True)    
