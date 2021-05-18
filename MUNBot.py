@@ -8,15 +8,15 @@ import csv
 
 
 
-CHANNEL_ID=int(763390600103854114)
-VOICE_ID=int(843865682760302602)
+CHANNEL_ID=int(753472470354362476)
+VOICE_ID=int(753472470773923861)
 client = commands.Bot(command_prefix = '')
 
 @client.event
 async def on_ready():
 	print('Bot is Ready.')
 	channel = client.get_channel(CHANNEL_ID)
-	await channel.send("MUN Bot isLive")
+	await channel.send("MUN Bot is Live")
 
 
 #FUNCTIONS
@@ -62,5 +62,6 @@ async def att(ctx):
 			await ctx.send(f'**{ctx.author}**, Attendance Recorded')
 	except:
 		await ctx.send(f'**{ctx.author}**, You must be in the Meeting')
+
 
 client.run(TOKEN)
