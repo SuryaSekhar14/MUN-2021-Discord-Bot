@@ -24,14 +24,17 @@ pip install requirements.txt
 Attendance Name Stream Year Team-Name
 ```  
 <img src="assets\N.png">
+
 ```bash
 Attendance Name Surname Stream Year Team-Name
 ```
 <img src="assets\NS.png">  
+
 ```bash
 Attendance Name MiddleName Surname Stream Year Team-Name
 ```  
 <img src="assets\NMS.png">
+
 ```bash
 Attendance Name MiddleName Surname Surname2 Stream Year Team-Name
 ```
