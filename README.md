@@ -41,5 +41,5 @@ Attendance Name MiddleName Surname Stream Year Team-Name
 ```bash
 Attendance Name MiddleName Surname Surname2 Stream Year Team-Name
 ```
-<img src="assets\NMSS.png" width="350" height="110">
+<img src="assets\NMSS.png" width="400" height="110">
 
