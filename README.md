@@ -26,20 +26,20 @@ pip3 install -r requirements.txt
 ```bash
 Attendance First-Name Surname Stream Year Team-Name
 ```  
-<img src="assets\N.png">
+<img src="assets\N.png" width="350" height="110">
 
 ```bash
 Attendance First-Name Middle-Name Surname Stream Year Team-Name
 ```
-<img src="assets\NS.png">  
+<img src="assets\NS.png" width="350" height="110">  
 
 ```bash
 Attendance Name MiddleName Surname Stream Year Team-Name
 ```  
-<img src="assets\NMS.png">
+<img src="assets\NMS.png" width="400" height="120">
 
 ```bash
 Attendance Name MiddleName Surname Surname2 Stream Year Team-Name
 ```
-<img src="assets\NMSS.png">
+<img src="assets\NMSS.png" width="420" height="120">
 
