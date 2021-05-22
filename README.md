@@ -3,6 +3,7 @@
 ### A Discord Bot for IEM MUN 2021 Official Discord Server
 <img src="https://img.shields.io/badge/Made%20With-Python-blue"></a>
 <img src="https://img.shields.io/badge/Library%20Used-Discord.py-red"></a>
+<img src="https://img.shields.io/badge/License-MIT-yellow"></a>
 
 ### Dependency Installation - 
 ```bash
