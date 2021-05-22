@@ -26,7 +26,7 @@ pip3 install -r requirements.txt
 ```bash
 Attendance First-Name Surname Stream Year Team-Name
 ```  
-<img src="assets\N.png">
+<img src="assets\N.png", width="300", height="100">
 
 ```bash
 Attendance First-Name Middle-Name Surname Stream Year Team-Name
