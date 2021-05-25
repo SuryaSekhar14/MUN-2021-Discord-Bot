@@ -5,9 +5,7 @@ from discord.ext import commands
 import csv
 
 
-TOKEN = ''
-CHANNEL_ID=int(829356662665642067)
-VOICE_ID=int(829356662665642068)
+
 client = commands.Bot(command_prefix = '')
 
 @client.event
@@ -22,6 +20,7 @@ async def on_ready():
 async def ping(ctx):
 	await ctx.send(f'What do you expect, Pong?\nLatency= {round(client.latency*1000)}ms')
 	print(ctx.author)
+	
 
 @client.command()            #Give Attendance
 async def Attendance(ctx, *nys):
