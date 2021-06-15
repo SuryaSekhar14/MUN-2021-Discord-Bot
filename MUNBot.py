@@ -4,8 +4,9 @@ from discord.member import VoiceState
 from discord.ext import commands
 import csv
 
-
-
+TOKEN=
+CHANNEL_ID=
+VOICE_ID=
 client = commands.Bot(command_prefix = '')
 
 @client.event
